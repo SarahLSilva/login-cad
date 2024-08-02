@@ -21,9 +21,19 @@ function salvarUser(){
 
     if(nomeUser){
        dadosListas.push(nomeUser);
-       console.log(dadosListas);
+       //console.log(dadosListas);
+       criaLista();
        document.getElementById('nomeUser').value = "";
     }else{
         alert('Favor informar o nome para cadastro');
+    }
+}
+
+//função para criar lista
+function criaLista(){
+    let tabela = document.getElementById('tabela').innerHTML = "<tr><tn>Nome de usuário</tn><th>Açoes</th></tr>";
+    for(let i =0; i <= (dadosListas.length - 1 ) ; i++) {
+        tabela +=" <tr><td>" + dadosLista[i] + "</td></tr>";
+        document.getElementById('tabela').innerHTML = tabela;
     }
 }
