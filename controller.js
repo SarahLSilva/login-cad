@@ -16,6 +16,7 @@ function acessar() {
 // Função que armazena em array nome na tabela de cadastro
 
 var dadosListas = [];
+
 function salvarUser(){
     let nomeUser = document.getElementById('nomeUser').value;
 
@@ -31,9 +32,10 @@ function salvarUser(){
 
 //função para criar lista
 function criaLista(){
-    let tabela = document.getElementById('tabela').innerHTML = "<tr><tn>Nome de usuário</tn><th>Açoes</th></tr>";
+    let tabela = document.getElementById('tabela').innerHTML = "<tr><th>Nome de usuário</th><th>Açoes</th></tr>";
     for(let i =0; i <= (dadosListas.length - 1 ) ; i++) {
-        tabela +=" <tr><td>" + dadosLista[i] + "</td></tr>";
+        tabela += "<tr><td>" + dadosListas[i] + "</td><td></td></tr>";
         document.getElementById('tabela').innerHTML = tabela;
+
     }
 }
