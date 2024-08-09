@@ -34,15 +34,15 @@ function salvarUser(){
 function criaLista(){
     let tabela = document.getElementById('tabela').innerHTML = "<tr><th>Nome de usuário</th><th>Açoes</th></tr>";
     for(let i =0; i <= (dadosListas.length - 1 ) ; i++) {
-        tabela += "<tr><td>" + dadosListas[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIdex)>Editar</button></td></tr>";
+        tabela += "<tr><td>" + dadosListas[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIdex)'>Editar</button></td></tr>";
         document.getElementById('tabela').innerHTML = tabela;
 
     }
 }
 
-// Função psrs editar nome da lista
+// Função para editar nome da lista
 
-function edita(i){
+function editar(i){
     document.getElementById('nomeUser').value = dadosListas[(i - 1)];
     dadosListas.splice(dadosListas[(i - 1)], 1);
 
