@@ -25,7 +25,7 @@ O projeto possui duas paginas uma para login e outra para cadastro de usuários.
 O projeto é composto pelos seguintes arquivos:
 - `login.html`: Página de login.
 - `cadrasto.html`: Página de cadastro de usuários.
-- `controller.js`: Arquivo JavaScript que contém a lógica de validação, cadastro e edição de usuários.
+- `controller.js`: Arquivo JavaScript de validação, cadastro e edição de usuários.
 
 ## HTML e CSS
 
@@ -56,7 +56,39 @@ Arquivo: `login.html`
     <script src='controller.js'></script>
 </body>
 </html>
+```
 
 >  Bootstrap 5 para estilização.
-> Formulário de Login: tem campos para email e senha e um botão para acessar a lista.
+>  Formulário de Login: tem campos para email e senha e um botão para acessar a lista.
 
+
+### Cadastro
+Arquivo: cadrasto.html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cadrasto</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <label for="">Nome:</label><br>
+        <input type="text" id="nomeUser" class="form-control"><br>
+        <button class="btn btn-primary" type="button" onclick="salvarUser()">SALVAR</button>
+    </div>
+    <div class="container">
+        <table class="table table-striped" id="tabela">
+            <tr>
+                <th>Nome usuario</th>
+                <th>Ações</th>
+            </tr>
+        </table>
+    </div>
+    <script src='controller.js'></script>
+</body>
+</html>
