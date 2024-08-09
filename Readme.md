@@ -4,15 +4,15 @@ Nesse projeto foi criado um sistema de registro de nomes utilizando HTML e JAVAS
 
  ## 🔗 | Índice 
 
-1. [Introdução](#introdução)
-2. [Estrutura do Projeto](#estrutura-do-projeto)
-3. [HTML e CSS](#html-e-css)
-   - [Login](#login)
-   - [Cadastro](#cadastro)
-4. [JavaScript](#javascript)
-   - [Validação de Login](#validação-de-login)
-   - [Cadastro de usuario](#cadastro-de-usuario)
-   - [Edição de Usuário](#edição-de-usuário)
+1. [Introdução](#https://github.com/SarahLSilva/login-cad?tab=readme-ov-file#--introdu%C3%A7%C3%A3o)
+2. [Estrutura do Projeto](#Estrutura-do-projeto)
+3. [HTML e CSS](#Html-e-css)
+   - [Login](#Login)
+   - [Cadastro](#Cadastro)
+4. [JavaScript](#Javascript)
+   - [Validação de Login](#Validação-de-login)
+   - [Cadastro de usuario](#Cadastro-de-usuario)
+   - [Edição de Usuário](#Edição-de-usuário)
 
 --
 
