@@ -16,3 +16,7 @@
 5. [Exemplo de Código](#exemplo-de-código)
 6. [Referências](#referências)
 
+## Introdução
+
+O projeto possui duas paginas uma para login e outra para cadastro de usuários. Tem como objetivo mostrar o uso básico de HTML, CSS, e JavaScript para criar e gerenciar uma lista de usuários.
+
