@@ -2,7 +2,7 @@
 
 Nesse projeto foi criado um sistema de registro de nomes utilizando HTML e JAVASCRIPT.
 
- ## Índice
+ ## 🔗 | Índice 
 
 1. [Introdução](#introdução)
 2. [Estrutura do Projeto](#estrutura-do-projeto)
@@ -11,14 +11,18 @@ Nesse projeto foi criado um sistema de registro de nomes utilizando HTML e JAVAS
    - [Cadastro](#cadastro)
 4. [JavaScript](#javascript)
    - [Validação de Login](#validação-de-login)
-   - [Cadastro de Usuário](#cadastro-de-usuario)
+   - [Cadastro de usuario](#cadastro-de-usuario)
    - [Edição de Usuário](#edição-de-usuário)
 
-## Introdução
+--
+
+## 🚀 | Introdução
 
 No projeto foi criado duas telas, quais realizam o login e outra qual em uma lista guarda nomes.
 
-## Estrutura do Projeto
+--
+
+## 🗂️ | Estrutura do Projeto
 
 O projeto é composto pelos seguintes arquivos:
 - `login.html`: Página de login.
@@ -27,9 +31,9 @@ O projeto é composto pelos seguintes arquivos:
 
 --
 
-## HTML e CSS
+## 🖥️ | HTML e CSS
 
-### Login
+### 🔑 | Login
 
 Arquivo: `login.html`
 
@@ -65,7 +69,7 @@ Arquivo: `login.html`
 
 --
 
-### Cadastro
+### 📝 | Cadastro
 
 Arquivo: cadrasto.html
 
@@ -105,9 +109,11 @@ Arquivo: cadrasto.html
 > Edição: Possibilitar editar um nome armazenado após registra-lo.
 
 --
-### JavaScript
+### 🖥️ | JavaScript
 
-#### validação de login
+
+
+####  🛡️ | validação de login
 
 Arquivo: controller.js
 
@@ -127,7 +133,8 @@ function editar(i) {
 }
 ````
 --
-### cadastro de usuario
+
+## ✍️ | cadastro de usuario
 
 ````
 var dadosListas = [];
@@ -147,7 +154,9 @@ function salvarUser() {
 
 > Armazenamento de Dados: Cria um array que guarda um nome no dadosListas e atualiza a tabela com a função criaLista.
 
-### Edição de usuario
+--
+
+### ✏️ | Edição de usuario
 
 ````
 function criaLista() {
