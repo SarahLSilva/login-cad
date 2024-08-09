@@ -4,7 +4,7 @@ Nesse projeto foi criado um sistema de registro de nomes utilizando HTML e JAVAS
 
  ## 🔗 | Índice 
 
-1. [Introdução](#🚀-|-Introdução)
+1. [Introdução](#Introdução)
 2. [Estrutura do Projeto](#Estrutura-do-projeto)
 3. [HTML e CSS](#Html-e-css)
    - [Login](#Login)
