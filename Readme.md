@@ -4,15 +4,20 @@ Nesse projeto foi criado um sistema de registro de nomes utilizando HTML e JAVAS
 
  ## 🔗 | Índice 
 
-1. [Introdução](#Introdução)
-2. [Estrutura do Projeto](#Estrutura-do-projeto)
-3. [HTML e CSS](#Html-e-css)
-   - [Login](#Login)
-   - [Cadastro](#Cadastro)
-4. [JavaScript](#Javascript)
-   - [Validação de Login](#Validação-de-login)
-   - [Cadastro de usuario](#Cadastro-de-usuario)
-   - [Edição de Usuário](#Edição-de-usuário)
+1. [Introdução](#🚀--introdução)
+2. [Estrutura do Projeto](#🗂️--estrutura-do-projeto)
+3. [HTML e CSS](#🖥️--html-e-css)
+   - [Login](#🔑--login)
+   - [Cadastro](#📝--cadastro)
+4. [JavaScript](#🖥️--javascript)
+   - [Validação de Login](#🛡️--validação-de-login)
+   - [Cadastro de usuario](#✍️--cadastro-de-usuario)
+   - [Edição](#✏️--edição-de-usuario)
+   - [Excluir](#🗑️--excluir)
+5. [Tecnoligias utilizadas](#tecnologias-utilizadas)
+6. [Referências](#referencias)
+7. [Autor](#autor)
+
 
 --
 
@@ -34,6 +39,8 @@ O projeto é composto pelos seguintes arquivos:
 ## 🖥️ | HTML e CSS
 
 ### 🔑 | Login
+
+![banner](img/login.png)
 
 Arquivo: `login.html`
 
@@ -70,6 +77,8 @@ Arquivo: `login.html`
 --
 
 ### 📝 | Cadastro
+
+![banner](img/cadrasto.png)
 
 Arquivo: cadrasto.html
 
@@ -174,6 +183,33 @@ function editar(i) {
 }
 ````
 
-> Criação da Lista: Atualiza a tabela com a lista de nomes.
-
 > Edição: Permite editar o nome registrado, removendo-o da lista e preenchendo o campo de texto com o nome escolhido.
+
+### 🗑️ | Excluir
+
+````
+function excluir(i){
+    dadosListas.splice((i-1), 1);
+    document.getElementById('tabela').deleteRow(i);
+}
+````
+
+> Excluir: Permite o usuário deletar um nome.
+
+## Tecnologias utilizadas
+
+- HTML
+- JAVASCRIPT
+- CSS
+- BOOTSTRAP5
+
+## Referencias
+
+[FREECODECAMP](https://www.freecodecamp.org/portuguese/news/splice-em-javascript-como-usar-o-metodo-de-array-splice-em-js/)
+
+[FREEPIK](https://br.freepik.com/)
+
+## Autor
+
+[Sarah](https://github.com/SarahLSilva)
+
