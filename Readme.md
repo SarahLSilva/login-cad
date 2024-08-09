@@ -1,6 +1,6 @@
 # login cad
 
- Nesse projeto foi criado um sistema em HTML e JAVASCRIPT para usuarios serem cadrastados e terem seus nomes registrados.
+Nesse projeto foi criado um sistema de registro de nomes utilizando HTML e JAVASCRIPT.
 
  ## Índice
 
@@ -13,19 +13,17 @@
    - [Validação de Login](#validação-de-login)
    - [Cadastro de Usuário](#cadastro-de-usuario)
    - [Edição de Usuário](#edição-de-usuário)
-5. [Exemplo de Código](#exemplo-de-código)
-6. [Referências](#referências)
 
 ## Introdução
 
-O projeto possui duas paginas uma para login e outra para cadastro de usuários. Tem como objetivo mostrar o uso básico de HTML, CSS, e JavaScript para criar e gerenciar uma lista de usuários.
+No projeto foi criado duas telas, quais realizam o login e outra qual em uma lista guarda nomes.
 
 ## Estrutura do Projeto
 
 O projeto é composto pelos seguintes arquivos:
 - `login.html`: Página de login.
 - `cadrasto.html`: Página de cadastro de usuários.
-- `controller.js`: Arquivo JavaScript de validação, cadastro e edição de usuários.
+- `controller.js`: Arquivo JavaScript de validação, cadastro e edição dos dados.
 
 --
 
@@ -104,7 +102,7 @@ Arquivo: cadrasto.html
 
 > Criação da Lista: Atualiza a tabela com a lista de usuários.
 
-> Edição: Permite editar o nome do usuário, removendo-o da lista e preenchendo o campo de texto com o nome selecionado.
+> Edição: Possibilitar editar um nome armazenado após registra-lo.
 
 --
 ### JavaScript
@@ -147,7 +145,7 @@ function salvarUser() {
 }
 ````
 
-> Armazenamento de Dados: Adiciona o nome do usuário ao array dadosListas e atualiza a tabela com a função criaLista.
+> Armazenamento de Dados: Cria um array que guarda um nome no dadosListas e atualiza a tabela com a função criaLista.
 
 ### Edição de usuario
 
@@ -167,6 +165,6 @@ function editar(i) {
 }
 ````
 
-> Criação da Lista: Atualiza a tabela com a lista de usuários.
+> Criação da Lista: Atualiza a tabela com a lista de nomes.
 
-> Edição: Permite editar o nome do usuário, removendo-o da lista e preenchendo o campo de texto com o nome selecionado.
+> Edição: Permite editar o nome registrado, removendo-o da lista e preenchendo o campo de texto com o nome escolhido.
