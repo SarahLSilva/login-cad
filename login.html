@@ -7,82 +7,94 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
+		<style>
+        /* CSS embutido para estilização personalizada */
+
         /* Reset básico para margem e padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0; /* Remove a margem padrão de todos os elementos */
+            padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+            box-sizing: border-box; /* Inclui bordas e preenchimento no cálculo da largura e altura dos elementos */
+        }
 
-/* Corpo da página */
-body {
-    font-family: Arial, sans-serif;
-    background-image: url(img/20100.jpg);
-    color: #333;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+        /* Corpo da página */
+        body {
+            font-family: Arial, sans-serif; /* Define a fonte do corpo da página como Arial ou uma fonte sans-serif alternativa */
+            background-image: url(img/20100.jpg); /* Define uma imagem de fundo para o corpo da página */
+            color: #333; /* Define a cor do texto como um cinza escuro */
+            padding: 20px; /* Adiciona preenchimento ao redor do conteúdo do corpo da página */
+            display: flex; /* Usa o layout flexível para o corpo da página */
+            justify-content: center; /* Centraliza horizontalmente o conteúdo do corpo da página */
+            align-items: center; /* Centraliza verticalmente o conteúdo do corpo da página */
+            height: 100vh; /* Define a altura do corpo da página como 100% da altura da janela de visualização */
+        }
 
-/* Container do formulário */
-.container {
-    max-width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        /* Container do formulário */
+        .container {
+            max-width: 400px; /* Define a largura máxima do container como 400 pixels */
+            padding: 20px; /* Adiciona preenchimento interno ao container */
+            background-color: #fff; /* Define a cor de fundo do container como branco */
+            border-radius: 8px; /* Arredonda os cantos do container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve ao container */
+        }
 
-/* Cabeçalhos */
-h3 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
+        /* Cabeçalhos */
+        h3 {
+            margin-bottom: 20px; /* Adiciona margem inferior ao cabeçalho */
+            font-size: 24px; /* Define o tamanho da fonte do cabeçalho */
+            color: #333; /* Define a cor do texto do cabeçalho */
+        }
 
-/* Estilização do formulário */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+        /* Estilização do formulário */
+        form {
+            display: flex; /* Usa o layout flexível para o formulário */
+            flex-direction: column; /* Organiza os elementos do formulário em uma coluna */
+            gap: 15px; /* Adiciona um espaçamento de 15 pixels entre os elementos do formulário */
+        }
 
-/* Campos de entrada */
-input[type="text"],
-input[type="password"] {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
+        /* Campos de entrada */
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px; /* Adiciona preenchimento interno aos campos de entrada */
+            border: 1px solid #ddd; /* Define uma borda leve ao redor dos campos de entrada */
+            border-radius: 4px; /* Arredonda os cantos dos campos de entrada */
+        }
 
-/* Botão de acessar */
-button.btn-warning {
-    background-color: #5900ff;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-}
+        /* Botão de acessar */
+        button.btn-warning {
+            background-color: #5900ff; /* Define a cor de fundo do botão como um tom de azul escuro */
+            border: none; /* Remove a borda padrão do botão */
+            border-radius: 4px; /* Arredonda os cantos do botão */
+            color: #fff; /* Define a cor do texto do botão como branco */
+            padding: 10px 15px; /* Adiciona preenchimento interno ao botão */
+            font-size: 16px; /* Define o tamanho da fonte do botão */
+            cursor: pointer; /* Muda o cursor para uma mão ao passar sobre o botão */
+        }
 
-button.btn-warning:hover {
-    background-color: #00bee0;
-}
-</style>
-    
+        button.btn-warning:hover {
+            background-color: #00bee0; /* Muda a cor de fundo do botão quando o mouse passa sobre ele */
+        }
+    </style>
 </head>
 <body>
+    <!-- Contêiner para o formulário de login com uma largura de coluna de 4 (usando Bootstrap) -->
     <div class="container col-4">
+        <!-- Cabeçalho da seção de login -->
         <h3>Login</h3>
+        <!-- Formulário de login com a classe 'form-control' aplicada ao próprio formulário (não convencional, geralmente é usada em elementos de formulário) -->
         <form action="" class="form-control">
-            <input type="text" id="loginEmail" class="form-control"><br><input type="password" id="loginSenha" class="form-control"><br>
+            <!-- Campo de entrada de texto para o e-mail de login -->
+            <input type="text" id="loginEmail" class="form-control"><br>
+            <!-- Campo de entrada de senha para o login -->
+            <input type="password" id="loginSenha" class="form-control"><br>
+            <!-- Botão para acessar, estilizado com a classe 'btn btn-warning' e chamando a função JavaScript 'acessar()' quando clicado -->
             <button onclick="acessar()" class="btn btn-warning" type="button">ACESSAR</button>
         </form>
     </div>    
+
+    <!-- Inclusão do arquivo JavaScript externo 'controller.js' que provavelmente contém a função 'acessar()' -->
     <script src='controller.js'></script>
 </body>
 </html>
+
+
