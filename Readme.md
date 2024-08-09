@@ -11,7 +11,7 @@
    - [Cadastro](#cadastro)
 4. [JavaScript](#javascript)
    - [Validação de Login](#validação-de-login)
-   - [Cadastro de Usuário](#cadastro-de-usuário)
+   - [Cadastro de Usuário](#cadastro-de-usuario)
    - [Edição de Usuário](#edição-de-usuário)
 5. [Exemplo de Código](#exemplo-de-código)
 6. [Referências](#referências)
@@ -27,11 +27,14 @@ O projeto é composto pelos seguintes arquivos:
 - `cadrasto.html`: Página de cadastro de usuários.
 - `controller.js`: Arquivo JavaScript de validação, cadastro e edição de usuários.
 
+--
+
 ## HTML e CSS
 
 ### Login
 
 Arquivo: `login.html`
+
 
 ```html
 <!DOCTYPE html>
@@ -59,12 +62,17 @@ Arquivo: `login.html`
 ```
 
 >  Bootstrap 5 para estilização.
+
 >  Formulário de Login: tem campos para email e senha e um botão para acessar a lista.
 
+--
 
 ### Cadastro
+
 Arquivo: cadrasto.html
 
+
+````html
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,3 +100,73 @@ Arquivo: cadrasto.html
     <script src='controller.js'></script>
 </body>
 </html>
+````
+
+> Criação da Lista: Atualiza a tabela com a lista de usuários.
+
+> Edição: Permite editar o nome do usuário, removendo-o da lista e preenchendo o campo de texto com o nome selecionado.
+
+--
+### JavaScript
+
+#### validação de login
+
+Arquivo: controller.js
+
+``` validação
+function criaLista() {
+    let tabela = "<tr><th>Nome de usuário</th><th>Ações</th></tr>";
+    for (let i = 0; i < dadosListas.length; i++) {
+        tabela += "<tr><td>" + dadosListas[i] + "</td><td><button type='button' onclick='editar(" + i + ")'>Editar</button></td></tr>";
+    }
+    document.getElementById('tabela').innerHTML = tabela;
+}
+
+function editar(i) {
+    document.getElementById('nomeUser').value = dadosListas[i];
+    dadosListas.splice(i, 1);
+    criaLista();
+}
+````
+--
+### cadastro de usuario
+
+````
+var dadosListas = [];
+
+function salvarUser() {
+    let nomeUser = document.getElementById('nomeUser').value;
+
+    if (nomeUser) {
+        dadosListas.push(nomeUser);
+        criaLista();
+        document.getElementById('nomeUser').value = "";
+    } else {
+        alert('Favor informar o nome para cadastro');
+    }
+}
+````
+
+> Armazenamento de Dados: Adiciona o nome do usuário ao array dadosListas e atualiza a tabela com a função criaLista.
+
+### Edição de usuario
+
+````
+function criaLista() {
+    let tabela = "<tr><th>Nome de usuário</th><th>Ações</th></tr>";
+    for (let i = 0; i < dadosListas.length; i++) {
+        tabela += "<tr><td>" + dadosListas[i] + "</td><td><button type='button' onclick='editar(" + i + ")'>Editar</button></td></tr>";
+    }
+    document.getElementById('tabela').innerHTML = tabela;
+}
+
+function editar(i) {
+    document.getElementById('nomeUser').value = dadosListas[i];
+    dadosListas.splice(i, 1);
+    criaLista();
+}
+````
+
+> Criação da Lista: Atualiza a tabela com a lista de usuários.
+
+> Edição: Permite editar o nome do usuário, removendo-o da lista e preenchendo o campo de texto com o nome selecionado.
