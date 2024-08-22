@@ -3,136 +3,117 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Cadrasto</title>
+    <title>Cadastro</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='cadastro.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<style>
-        /* CSS embutido dentro da tag <style> para estilização personalizada */
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>   
+    /* Reset básico para garantir uma aparência consistente entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Reset básico para margem e padding */
-        * {
-            margin: 0; /* Remove a margem padrão de todos os elementos */
-            padding: 0; /* Remove o preenchimento padrão de todos os elementos */
-            box-sizing: border-box; /* Inclui bordas e preenchimento no cálculo da largura e altura dos elementos */
-        }
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(img/20100.jpg);
+    color: #333; /* Cor do texto */
+}
 
-        /* Corpo da página */
-        body {
-            font-family: Arial, sans-serif; /* Define a fonte do corpo da página */
-            background-image: url(img/20100.jpg); /* Define uma imagem de fundo para o corpo da página */
-            color: #333; /* Define a cor do texto no corpo da página */
-            padding: 20px; /* Adiciona preenchimento ao redor do conteúdo do corpo da página */
-        }
+/* Container geral para o formulário e a tabela */
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto; /* Centraliza o container e adiciona margem */
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco para o container */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para profundidade */
+}
 
-        /* Container principal para centralizar o conteúdo */
-        .container {
-            max-width: 800px; /* Define a largura máxima do container */
-            margin: 0 auto; /* Centraliza o container horizontalmente */
-            padding: 20px; /* Adiciona preenchimento interno ao container */
-            background-color: #fff; /* Define a cor de fundo do container como branco */
-            border-radius: 8px; /* Arredonda os cantos do container */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao container */
-        }
+/* Estilo para os cabeçalhos */
+h1 {
+    color: #007bff; /* Cor azul para os cabeçalhos */
+    margin-bottom: 15px;
+}
 
-        /* Cabeçalhos */
-        h3 {
-            margin-bottom: 20px; /* Adiciona margem inferior ao cabeçalho */
-            font-size: 24px; /* Define o tamanho da fonte do cabeçalho */
-            color: #333; /* Define a cor do texto do cabeçalho */
-        }
+/* Estilo para os rótulos */
+label {
+    display: block; /* Faz com que os rótulos ocupem a linha inteira */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
 
-        /* Estilização do formulário */
-        form {
-            display: flex; /* Usa o layout flexível para o formulário */
-            flex-direction: column; /* Organiza os elementos do formulário em uma coluna */
-            gap: 15px; /* Adiciona um espaçamento entre os elementos do formulário */
-        }
+/* Estilo para os inputs */
+input.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
 
-        /* Campos de entrada */
-        input[type="text"] {
-            padding: 10px; /* Adiciona preenchimento interno aos campos de entrada */
-            border: 1px solid #ddd; /* Define uma borda leve ao redor dos campos de entrada */
-            border-radius: 4px; /* Arredonda os cantos dos campos de entrada */
-        }
+/* Estilo para o botão */
+button.btn-success {
+    background-color: #3f28a7; /* Cor verde para o botão */
+    border-color: #3f28a7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+}
 
-        /* Botão de salvar */
-        button.btn-primary {
-            background-color: #007bff; /* Define a cor de fundo do botão como azul */
-            border: none; /* Remove a borda padrão do botão */
-            border-radius: 4px; /* Arredonda os cantos do botão */
-            color: #fff; /* Define a cor do texto do botão como branco */
-            padding: 10px 15px; /* Adiciona preenchimento interno ao botão */
-            font-size: 16px; /* Define o tamanho da fonte do botão */
-            cursor: pointer; /* Muda o cursor para uma mão ao passar sobre o botão */
-        }
+button.btn-success:hover {
+    background-color: #2b2188; /* Cor verde escura ao passar o mouse */
+    border-color: #241e7e;
+}
 
-        button.btn-primary:hover {
-            background-color: #0056b3; /* Muda a cor de fundo do botão quando o mouse passa sobre ele */
-        }
+/* Estilo para a tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaçamento entre as células */
+}
 
-        /* Tabela */
-        table {
-            width: 100%; /* Define a largura da tabela como 100% do container pai */
-            margin-top: 20px; /* Adiciona margem superior à tabela */
-            border-collapse: collapse; /* Remove o espaçamento entre as bordas das células da tabela */
-        }
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6; /* Linha de divisão entre as linhas da tabela */
+}
 
-        table th, table td {
-            padding: 10px; /* Adiciona preenchimento interno às células da tabela */
-            text-align: left; /* Alinha o texto das células à esquerda */
-            border: 1px solid #ddd; /* Define uma borda leve ao redor das células da tabela */
-        }
+.table th {
+    background-color: #f1f1f1; /* Cor de fundo para o cabeçalho da tabela */
+}
 
-        table th {
-            background-color: #f8f9fa; /* Define a cor de fundo das células de cabeçalho da tabela */
-            color: #333; /* Define a cor do texto das células de cabeçalho da tabela */
-        }
-
-        table tr:nth-child(even) {
-            background-color: #f2f2f2; /* Define a cor de fundo das linhas pares da tabela para alternar o fundo */
-        }
-
-        table td button {
-            background-color: #007bff; /* Define a cor de fundo dos botões dentro das células da tabela como azul */
-            border: none; /* Remove a borda padrão dos botões */
-            color: #fff; /* Define a cor do texto dos botões como branco */
-            padding: 5px 10px; /* Adiciona preenchimento interno aos botões */
-            border-radius: 4px; /* Arredonda os cantos dos botões */
-            cursor: pointer; /* Muda o cursor para uma mão ao passar sobre o botão */
-        }
-
-        table td button:hover {
-            background-color: #0056b3; /* Muda a cor de fundo dos botões quando o mouse passa sobre eles */
-        }
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Cor de fundo alternada para linhas ímpares */
+}
+   
     </style>
 </head>
+</html>
 <body>
-    <!-- Contêiner para o formulário de entrada -->
     <div class="container">
-        <!-- Rótulo para o campo de entrada do nome -->
-        <label for="">Nome:</label><br>
-        <!-- Campo de entrada de texto para o nome do usuário -->
+        <h1>Nome:</h1>
+        <label for="" Nome:></label>
         <input type="text" id="nomeUser" class="form-control"><br>
-        <!-- Botão para salvar o usuário, com evento de clique que chama a função salvarUser() -->
-        <button class="btn btn-primary" type="button" onclick="salvarUser()">SALVAR</button>
+        <h1>E-mail:</h1>
+        <label for="" E-mail:></label>
+        <input type="text" id="emailUser" class="form-control"><br>
+        <button type="button" onclick="salvarUser()" class="btn btn-success">SALVAR</button>
     </div>
-
-    <!-- Contêiner para a tabela que exibirá os usuários -->
+    <br>
     <div class="container">
-        <!-- Tabela com a classe "table" e "table-striped" para exibir usuários e suas ações -->
-        <table class="table table-striped" id="tabela">
-            <!-- Cabeçalho da tabela com colunas para nome do usuário e ações -->
+        <table class="table table-striped" id="table">
             <tr>
-                <th>Nome usuario</th>
+                <th>Nome Usuário</th>
+                <th>E-mail</th>
                 <th>Ações</th>
             </tr>
         </table>
     </div>
-
-    <!-- Inclusão do arquivo JavaScript externo que provavelmente contém a função salvarUser() -->
-    <script src='controller.js'></script>
+    <script src="controller.js"></script>
 </body>
 </html>
-
-
