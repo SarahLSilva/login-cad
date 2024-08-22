@@ -10,7 +10,7 @@ function acessar() {
         alert("Favor preencher todos os campos");
     } else {
         // Redireciona para a página de cadastro se todos os campos estiverem preenchidos
-        window.location.href = 'cadastro.html';
+        window.location.href = 'cadrastro.html';
     }
 }
 
