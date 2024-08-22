@@ -96,24 +96,30 @@ Arquivo: cadrasto.html
 </head>
 <body>
     <div class="container">
-        <label for="">Nome:</label><br>
+        <h1>Nome:</h1>
+        <label for="" Nome:></label>
         <input type="text" id="nomeUser" class="form-control"><br>
-        <button class="btn btn-primary" type="button" onclick="salvarUser()">SALVAR</button>
+        <h1>E-mail:</h1>
+        <label for="" E-mail:></label>
+        <input type="text" id="emailUser" class="form-control"><br>
+        <button type="button" onclick="salvarUser()" class="btn btn-success">SALVAR</button>
     </div>
+    <br>
     <div class="container">
-        <table class="table table-striped" id="tabela">
+        <table class="table table-striped" id="table">
             <tr>
-                <th>Nome usuario</th>
+                <th>Nome Usuário</th>
+                <th>E-mail</th>
                 <th>Ações</th>
             </tr>
         </table>
     </div>
-    <script src='controller.js'></script>
+    <script src="controller.js"></script>
 </body>
 </html>
 ````
 
-> Criação da Lista: Atualiza a tabela com a lista de usuários.
+> Criação da Lista: Atualiza a tabela com a lista de nome e email usuários.
 
 > Edição: Possibilitar editar um nome armazenado após registra-lo.
 
@@ -146,19 +152,26 @@ function editar(i) {
 ## ✍️ | cadastro de usuario
 
 ````
-var dadosListas = [];
+var dadosLista = [];
+var salvaEmail = [];
 
 function salvarUser() {
     let nomeUser = document.getElementById('nomeUser').value;
+    let emailUser = document.getElementById('emailUser').value;
 
-    if (nomeUser) {
-        dadosListas.push(nomeUser);
+    if (nomeUser && emailUser) {
+        dadosLista.push(nomeUser);
+        salvaEmail.push(emailUser);
+
         criaLista();
+
         document.getElementById('nomeUser').value = "";
+        document.getElementById('emailUser').value = "";
     } else {
-        alert('Favor informar o nome para cadastro');
+        alert("Favor preencher todos campos!");
     }
 }
+
 ````
 
 > Armazenamento de Dados: Cria um array que guarda um nome no dadosListas e atualiza a tabela com a função criaLista.
@@ -169,18 +182,24 @@ function salvarUser() {
 
 ````
 function criaLista() {
-    let tabela = "<tr><th>Nome de usuário</th><th>Ações</th></tr>";
-    for (let i = 0; i < dadosListas.length; i++) {
-        tabela += "<tr><td>" + dadosListas[i] + "</td><td><button type='button' onclick='editar(" + i + ")'>Editar</button></td></tr>";
+    let table = "<tr><th>Nome Usuário</th><th>E-mail</th><th>Ações</th></tr>";
+
+    for (let i = 0; i < dadosLista.length; i++) {
+        table += "<tr><td>" + dadosLista[i] + "</td><td>" + salvaEmail[i] + "</td><td><button type='button' onclick='editar(" + i + ")'>Editar</button><button id='btnaltera' type='button' onclick='excluir(" + i + ")'>Excluir</button></td></tr>";
     }
-    document.getElementById('tabela').innerHTML = tabela;
+
+    document.getElementById('table').innerHTML = table;
 }
 
+
 function editar(i) {
-    document.getElementById('nomeUser').value = dadosListas[i];
-    dadosListas.splice(i, 1);
-    criaLista();
+    document.getElementById('nomeUser').value = dadosLista[i];
+    document.getElementById('emailUser').value = salvaEmail[i];
+
+    dadosLista.splice(i, 1);
+    salvaEmail.splice(i, 1);
 }
+
 ````
 
 > Edição: Permite editar o nome registrado, removendo-o da lista e preenchendo o campo de texto com o nome escolhido.
@@ -188,9 +207,11 @@ function editar(i) {
 ### 🗑️ | Excluir
 
 ````
-function excluir(i){
-    dadosListas.splice((i-1), 1);
-    document.getElementById('tabela').deleteRow(i);
+function excluir(i) {
+    dadosLista.splice(i, 1);
+    salvaEmail.splice(i, 1);
+
+    document.getElementById('table').deleteRow(i + 1);
 }
 ````
 
