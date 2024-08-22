@@ -49,7 +49,7 @@ function criaLista() {
 
     // Adiciona uma linha para cada usuário na lista
     for (let i = 0; i < dadosLista.length; i++) {
-        table += "<tr><td>" + dadosLista[i] + "</td><td>" + salvaEmail[i] + "</td><td><button type='button' onclick='editar(" + i + ")'>Editar</button><button id='btnaltera' type='button' onclick='excluir(" + i + ")'>Excluir</button></td></tr>";
+        table += "<tr><td>" + dadosLista[i] + "</td><td>" + salvaEmail[i] + "</td><td><button type='button' onclick='editar(" + i + ")' class='btn btn-success'>Editar</button><button class='btn btn-success' id='btnaltera' type='button' onclick='excluir(" + i + ")'>Excluir</button></td></tr>";
     }
 
     // Atualiza o conteúdo da tabela com a nova lista
